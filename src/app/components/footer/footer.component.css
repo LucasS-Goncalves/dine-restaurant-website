@@ -1,0 +1,25 @@
+footer{
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding: 6rem 0;
+  align-items: center;
+  background-color: var(--cod-gray);
+  font-size: .875rem;
+  font-weight: 400;
+  text-align: center;
+  color: var(--white);
+  line-height: 28px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.logo{
+  width: 103.42px;
+  height: 40px;
+}
+
+.openTimesList{
+  list-style-type: none;
+}
+

@@ -2,10 +2,15 @@
   margin: 0;
   padding: 0;
   font-family: 'League Spartan', sans-serif;
-  height: 100%;
+  font-size: 16px;
+}
+
+hmtl{
+  height: 100vh;
 }
 
 :root{
+  --white: rgb(255, 255, 255);
   --beaver: rgb(158, 127, 102);
   --cod-gray: rgb(17, 17, 17);
   --mirage: rgb(23, 25, 43);
