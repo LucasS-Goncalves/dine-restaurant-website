@@ -41,17 +41,35 @@
       <h3>A few highlights from <br> our menu</h3>
       <p>We cater for all dietary requirements, but here’s a glimpse at some of our diner’s favourites. Our menu is revamped every season.</p>
     </article>
-    <ul class="highlight" >
+    <ul class="highlightsList">
       <li *ngFor="let hightlight of highlights, let i = index">
-        <picture>
-          <source media="(max-width: 767px)" srcset="{{hightlight.image1}}">
-          <source media="(min-width: 768px)" srcset="{{hightlight.image2}}">
-          <img src="{{hightlight.image1}}" alt="" class="highlightFood">
-        </picture>
+        <div class="highlightImg_div">
+          <picture>
+            <source media="(max-width: 767px)" srcset="{{hightlight.image1}}">
+            <source media="(min-width: 768px)" srcset="{{hightlight.image2}}">
+            <img src="{{hightlight.image1}}" alt="" class="highlightFood">
+          </picture>
+        </div>
         <h4>{{hightlight.title}}</h4>
         <p>{{hightlight.description}}</p>
         <div class="borderBottom" *ngIf="i < highlights.length - 1"></div>
       </li>
+    </ul>
+  </section>
+
+  <section class="slides">
+    <div class="image_div">
+      <picture>
+        <source media="(max-width: 767px)" srcset="../../../assets/images/homepage/family-gathering-mobile@2x.jpg">
+        <source media="(max-width: 1439px)" srcset="../../../assets/images/homepage/family-gathering-tablet@2x.jpg">
+        <source media="(max-width: 1439px)" srcset="../../../assets/images/homepage/family-gathering-desktop@2x.jpg">
+        <img src="../../../assets/images/homepage/family-gathering-mobile@2x.jpg" alt="" class="slidesImg">
+      </picture>
+    </div>
+    <ul class="slidesOptions">
+      <li>FAMILY GATHERING</li>
+      <li>SPECIAL EVENTS</li>
+      <li>SOCIAL EVENTS</li>
     </ul>
   </section>
 </main>

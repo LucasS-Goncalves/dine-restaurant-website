@@ -1,0 +1,36 @@
+.slides{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.image_div{
+  width: 87%;
+}
+
+.slidesImg{
+  display: block;
+  width: 100%;
+  box-shadow: var(--image-shadow);
+}
+
+.slidesOptions{
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: 1.0625rem;
+  line-height: 28px;
+  letter-spacing: 2.5px;
+  gap: 1rem;
+}
+
+.slidesOptions li{
+  cursor: pointer;
+}
+
+
+
