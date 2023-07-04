@@ -34,4 +34,24 @@
       <p>All our ingredients come directly from our farm or local fishery. So you can be sure that you’re eating the freshest, most sustainable food.</p>
     </article>
   </section>
+
+  <section class="highlights">
+    <article class="highlightsExplanation">
+      <svg xmlns="http://www.w3.org/2000/svg" width="71" height="7"><g fill="none" fill-rule="evenodd"><path fill="#9E7F66" d="M15 3h56v1H15z"/><circle cx="3.5" cy="3.5" r="3" stroke="#9E7F66"/></g></svg>
+      <h3>A few highlights from <br> our menu</h3>
+      <p>We cater for all dietary requirements, but here’s a glimpse at some of our diner’s favourites. Our menu is revamped every season.</p>
+    </article>
+    <ul class="highlight" >
+      <li *ngFor="let hightlight of highlights, let i = index">
+        <picture>
+          <source media="(max-width: 767px)" srcset="{{hightlight.image1}}">
+          <source media="(min-width: 768px)" srcset="{{hightlight.image2}}">
+          <img src="{{hightlight.image1}}" alt="" class="highlightFood">
+        </picture>
+        <h4>{{hightlight.title}}</h4>
+        <p>{{hightlight.description}}</p>
+        <div class="borderBottom" *ngIf="i < highlights.length - 1"></div>
+      </li>
+    </ul>
+  </section>
 </main>

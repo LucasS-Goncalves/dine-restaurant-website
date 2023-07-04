@@ -17,6 +17,7 @@ hmtl{
   --ebony-clay: rgb(36, 43, 55);
   --shuttle-gray: rgb(92, 103, 121);
   --image-shadow: rgb(36, 43, 55, .2);
+  --border-bottom: #979797;
 }
 
 p,h1,h2,h3,h4,h5,h6{

@@ -1,0 +1,81 @@
+.highlights{
+  background-color: var(--cod-gray);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  padding: 10rem 0 1rem 0;
+}
+
+.highlightsExplanation{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  color: var(--white);
+  margin-bottom: 2rem;
+}
+
+.highlightsExplanation h3{
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: -.4px;
+}
+
+.highlightsExplanation p{
+  width: 87%;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 26px;
+}
+
+.highlightsExplanation svg{
+  margin-bottom: 1.5rem;
+}
+
+.highlight{
+  width: 100%;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3.5rem;
+}
+
+.highlight li{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+  color: var(--white);
+}
+
+.highlight li h4{
+  margin-top: 1rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0.25px;
+}
+
+.highlight li p {
+  padding: 0 3.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 26px;
+}
+
+.highlightFood{
+  width: 87%;
+}
+
+.borderBottom{
+  width: 87%;
+  height: 1px;
+  margin-top: 2rem;
+  background-color: var(--border-bottom);
+}
