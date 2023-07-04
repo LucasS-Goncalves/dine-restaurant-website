@@ -1,0 +1,35 @@
+.benefits{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6rem;
+}
+
+.benefit{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  text-align: center;
+}
+
+.benefit img{
+  width: 327px;
+  height: 400px;
+}
+
+.benefit h3{
+  color: var(--ebony-clay);
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 40px;
+  letter-spacing: -.4px;
+}
+
+.benefit p{
+  color: var(--ebony-clay);
+  font-size: 1rem;
+  line-height: 26px;
+}

@@ -4,6 +4,7 @@
 }
 
 .food{
+  display: block;
   width: 100%;
 }
 
