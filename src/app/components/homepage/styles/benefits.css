@@ -1,23 +1,35 @@
+.main{
+  width: 100%;
+  height: auto;
+  position: relative;
+  top: -60px;
+}
+
 .benefits{
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 6rem;
+  gap: 5rem;
 }
+
 
 .benefit{
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
+  gap: 1.2rem;
   text-align: center;
 }
 
 .benefit img{
-  width: 327px;
-  height: 400px;
+  width: 87%;
+  box-shadow: 0 80px 50px -15px var(--image-shadow);
+}
+
+.benefit svg {
+  margin: 2rem 0;
 }
 
 .benefit h3{
@@ -29,7 +41,9 @@
 }
 
 .benefit p{
+  width: 87%;
   color: var(--ebony-clay);
   font-size: 1rem;
+  font-weight: 400;
   line-height: 26px;
 }
