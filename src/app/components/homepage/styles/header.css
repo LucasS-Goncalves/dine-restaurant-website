@@ -42,7 +42,7 @@
   text-align: center;
 }
 
-.book_dark{
+.book_dark_button{
   width: 245px;
   height: 64px;
   position: relative;
@@ -52,11 +52,11 @@
   font-size: 1.0625rem;
   font-weight: 600;
   letter-spacing: 2.5px;
-  cursor: pointer;
   transition: .3s;
+  cursor: pointer;
 }
 
-.book_dark::before{
+.book_dark_button::before{
   content: "";
   position: absolute;
   width: 100%;
@@ -68,11 +68,11 @@
   transition: .3s;
 }
 
-.book_dark:hover::before{
+.book_dark_button:hover::before{
   height: 100%;
 }
 
-.book_dark:hover{
+.book_dark_button:hover{
   color: var(--cod-gray);
 }
 

@@ -3,8 +3,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 3rem;
-  margin-bottom: 3rem;
+  gap: 1rem;
+  margin: 5rem 0;
 }
 
 .image_div{
@@ -23,13 +23,87 @@
   flex-direction: column;
   text-align: center;
   font-size: 1.0625rem;
+  font-weight: 600;
   line-height: 28px;
   letter-spacing: 2.5px;
   gap: 1rem;
+  margin: 2.5rem 0 1rem 0;
 }
 
-.slidesOptions li{
+.slideItem{
   cursor: pointer;
+  color: #4C4C4C;
+  opacity: .5;
+}
+
+.slideItem.activate{
+  color: #4C4C4C;
+  opacity: 1;
+  position: relative;
+}
+
+.slideItem.activate::after{
+  content: "";
+  width: 48px;
+  height: 1px;
+  background: var(--beaver);
+  position: absolute;
+  bottom: 0;
+  right: calc(50% - 24px);
+}
+
+.slides h3{
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: -.4px;
+  color: var(--cod-gray);
+  text-align: center;
+}
+
+.slides p{
+  width: 87%;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 26px;
+  color: var(--cod-gray);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.book_light_button{
+  width: 245px;
+  height: 64px;
+  position: relative;
+  background: var(--cod-gray);
+  border: 1px solid var(--cod-gray);
+  color: var(--white);
+  font-size: 1.0625rem;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  cursor: pointer;
+  transition: .3s;
+  z-index: 1;
+}
+
+.book_light_button::before{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 0;
+  background-color: var(--white);
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: .3s;
+}
+
+.book_light_button:hover::before{
+  height: 100%;
+}
+
+.book_light_button:hover{
+  color: var(--cod-gray);
 }
 
 

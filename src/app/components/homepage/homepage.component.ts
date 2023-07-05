@@ -7,7 +7,8 @@ import { Component } from '@angular/core';
     './styles/header.css',
     './styles/benefits.css',
     './styles/highlights.css',
-    './styles/slides.css'
+    './styles/slides.css',
+    './styles/reservation.css'
   ]
 })
 export class HomepageComponent{
