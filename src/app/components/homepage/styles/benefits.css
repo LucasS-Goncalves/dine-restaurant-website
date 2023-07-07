@@ -1,50 +1,167 @@
-.main{
-  width: 100%;
-  height: auto;
-}
-
 .benefits{
   width: 100%;
-  position: relative;
-  top: -60px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 5rem;
-  margin-bottom: 4rem;
+  z-index: 1;
 }
-
 
 .benefit{
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1.2rem;
+}
+
+.benefit:first-child{
+  position: relative;
+  top: -70px;
+  z-index: 1;
+}
+
+.benefit:last-child{
+  padding-bottom: 4rem;
+}
+
+.benefitsImage_container{
+  width: 87%;
+}
+
+.benefitImage{
+  width: 100%;
+  display: block;
+  box-shadow: var(--image-shadow);
+}
+
+.curve_right, .curve_left_div, .lines{
+  display: none;
+}
+
+.texts{
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  align-items: center;
   text-align: center;
 }
 
-.benefit img{
-  width: 87%;
-  box-shadow: 0 80px 50px -15px var(--image-shadow);
+.texts svg {
+  margin: 1.5rem 0;
 }
 
-.benefit svg {
-  margin: 2rem 0;
-}
-
-.benefit h3{
-  color: var(--ebony-clay);
+.texts h3{
   font-size: 2rem;
   font-weight: 800;
+  color: var(--ebony-clay);
   line-height: 40px;
   letter-spacing: -.4px;
 }
 
-.benefit p{
+.texts p{
   width: 87%;
-  color: var(--ebony-clay);
   font-size: 1rem;
   font-weight: 400;
+  color: var(--ebony-clay);
   line-height: 26px;
+}
+
+@media(min-width: 768px){
+  .benefit:first-child{
+    top: -90px;
+  }
+
+  .benefit:first-child .benefitsImage_container{
+    position: relative;
+  }
+
+  .curve_right{
+    display: block;
+    position: absolute;
+    bottom: -22%;
+    right: 52%;
+    z-index: -1;
+  }
+
+  .benefit:last-child{
+    position: relative;
+  }
+
+  .curve_left_div{
+    display: block;
+    position: absolute;
+    width: 50%;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+  }
+
+  .curve_left_div .curve_left{
+
+    width: 100%;
+    object-fit: none;
+    object-position: left;
+  }
+
+  .lines{
+    display: block;
+    position: absolute;
+    right: 2%;
+    top: 30%;
+  }
+
+  .benefit, .texts{
+    gap: 1.5rem;
+  }
+
+  .texts h3{
+    font-size: 3rem;
+    line-height: 48px;
+    letter-spacing: -.5px;
+  }
+
+  .texts p{
+    width: 470px;
+    font-size: 1.25rem;
+    line-height: 30px;
+  }
+}
+
+@media(min-width: 1200px){
+
+  .benefit:first-child{
+    top: -60px;
+    flex-direction: row;
+  }
+
+  .curve_right{
+    top: 20%;
+    left: 0;
+  }
+
+  .benefit:last-child{
+    flex-direction: row-reverse;
+    position: relative;
+    bottom: -90px;
+  }
+
+  .benefitsImage_container{
+    width: 540px;
+    height: 720px;
+  }
+
+  .benefit{
+    gap: 5rem;
+  }
+
+  .lines{
+    right: 2%;
+    top: 30%;
+  }
+
+  .texts{
+    align-items: flex-start;
+    text-align: start;
+  }
 }

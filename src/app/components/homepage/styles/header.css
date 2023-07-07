@@ -1,23 +1,30 @@
 .header{
+  width: 100%;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.headerPicture_container{
   width: 100%;
 }
 
-.food{
-  display: block;
+.headerFood{
   width: 100%;
+  display: block;
 }
 
 .headerContent{
   width: 100%;
-  position: absolute;
-  top: 30%;
-  color: var(--white);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 1.8rem;
+  padding: .8rem 0 10rem 0;
+  background-color: var(--cod-gray);
+  color: var(--white);
   z-index: 1;
 }
 
@@ -39,6 +46,7 @@
   font-size: 1rem;
   font-weight: 400;
   line-height: 26px;
+  margin-bottom: 1.5rem;
   text-align: center;
 }
 
@@ -57,13 +65,13 @@
 }
 
 .book_dark_button::before{
+  width: 100%;
   content: "";
   position: absolute;
-  width: 100%;
   height: 0;
-  background-color: var(--white);
   top: 0;
   left: 0;
+  background-color: var(--white);
   z-index: -1;
   transition: .3s;
 }
@@ -78,7 +86,7 @@
 
 @media(min-width: 768px){
   .headerContent{
-    top: 37%;
+    padding: 0 0 14rem 0;
     gap: 2rem;
   }
 
@@ -96,23 +104,34 @@
   .headerContent p{
     width: 573px;
     font-size: 1.25rem;
+    font-size: 1.25rem;
     line-height: 30px;
-    margin-bottom: 2rem;
   }
 }
 
-@media(min-width: 1440px){
+@media(min-width: 1200px){
+  .headerPicture_container{
+    height: 820px;
+  }
+
+  .headerFood{
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
   .headerContent{
     width: 507px;
-    top: 10%;
-    left: 10%;
-    gap: 2rem;
+    position: absolute;
+    padding: 0;
+    top: 7%;
+    left: 5.5%;
+    background-color: transparent;
+    gap: 1.5rem;
     align-items: flex-start;
   }
 
   .headerContent h1 > img{
-    width: 103px;
-    height: 40px;
     margin-bottom: 95%;
   }
 
@@ -125,7 +144,9 @@
 
   .headerContent p{
     width: 445px;
-    margin-bottom: 2rem;
+    margin-bottom: 1.2rem;
     text-align: start;
   }
 }
+
+

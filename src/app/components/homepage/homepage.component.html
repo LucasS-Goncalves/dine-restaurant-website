@@ -1,10 +1,12 @@
 <header class="header">
-  <picture>
-    <source media="(max-width: 767px)" srcset="../../../assets/images/homepage/hero-bg-mobile@2x.jpg">
-    <source media="(max-width: 1439px)" srcset="../../../assets/images/homepage/hero-bg-tablet@2x.jpg">
-    <source media="(min-width: 1440px)" srcset="../../../assets/images/homepage/hero-bg-desktop@2x.jpg">
-    <img class="food" alt="" src="../../../assets/images/homepage/hero-bg-mobile@2x.jpg">
-  </picture>
+  <div class="headerPicture_container">
+    <picture>
+      <source media="(max-width: 767px)" srcset="../../../assets/images/homepage/hero-bg-mobile@2x.svg">
+      <source media="(max-width: 1199px)" srcset="../../../assets/images/homepage/hero-bg-tablet@2x.svg">
+      <source media="(min-width: 1200px)" srcset="../../../assets/images/homepage/hero-bg-desktop@2x.svg">
+      <img class="headerFood" alt="" src="../../../assets/images/homepage/hero-bg-mobile@2x.svg">
+    </picture>
+  </div>
   <article class="headerContent">
     <h1><img class="logo" src="../../../assets/images/logo.svg" alt="logo"></h1>
     <h2>
@@ -22,16 +24,39 @@
 <main class="main">
   <section class="benefits">
     <article class="benefit">
-        <img src="../../../assets/images/homepage/enjoyable-place-mobile@2x.jpg" alt="">
-      <svg xmlns="http://www.w3.org/2000/svg" width="71" height="7"><g fill="none" fill-rule="evenodd"><path fill="#9E7F66" d="M15 3h56v1H15z"/><circle cx="3.5" cy="3.5" r="3" stroke="#9E7F66"/></g></svg>
-      <h3>Enjoyable place <br> for all the family</h3>
-      <p>Our relaxed surroundings make dining with us a great experience for everyone. We can even arrange a tour of the farm before your meal.</p>
+      <div class="benefitsImage_container">
+        <picture>
+          <source media="(max-width: 767px)" srcset="../../../assets/images/homepage/enjoyable-place-mobile@2x.jpg">
+          <source media="(max-width: 1199px)" srcset="../../../assets/images/homepage/enjoyable-place-tablet@2x.jpg">
+          <source media="(min-width: 1200px)" srcset="../../../assets/images/homepage/enjoyable-place-desktop@2x.jpg">
+          <img src="../../../assets/images/homepage/enjoyable-place-mobile@2x.jpg" alt="" class="benefitImage">
+        </picture>
+        <svg class="curve_right" xmlns="http://www.w3.org/2000/svg" width="895" height="320"><path fill="#5C6779" fill-rule="evenodd" d="M795 0H0v320h895V100C895 44.772 850.228 0 795 0z" opacity=".077"/></svg>
+      </div>
+      <div class="texts">
+        <svg xmlns="http://www.w3.org/2000/svg" width="71" height="7"><g fill="none" fill-rule="evenodd"><path fill="#9E7F66" d="M15 3h56v1H15z"/><circle cx="3.5" cy="3.5" r="3" stroke="#9E7F66"/></g></svg>
+        <h3>Enjoyable place <br> for all the family</h3>
+        <p>Our relaxed surroundings make dining with us a great experience for everyone. We can even arrange a tour of the farm before your meal.</p>
+      </div>
     </article>
     <article class="benefit">
-      <img src="../../../assets/images/homepage/locally-sourced-mobile@2x.jpg" alt="">
-      <svg xmlns="http://www.w3.org/2000/svg" width="71" height="7"><g fill="none" fill-rule="evenodd"><path fill="#9E7F66" d="M15 3h56v1H15z"/><circle cx="3.5" cy="3.5" r="3" stroke="#9E7F66"/></g></svg>
-      <h3>The most locally <br> sourced food</h3>
-      <p>All our ingredients come directly from our farm or local fishery. So you can be sure that you’re eating the freshest, most sustainable food.</p>
+      <div class="benefitsImage_container">
+        <picture>
+          <source media="(max-width: 767px)" srcset="../../../assets/images/homepage/locally-sourced-mobile@2x.jpg">
+          <source media="(max-width: 1199px)" srcset="../../../assets/images/homepage/locally-sourced-tablet@2x.jpg">
+          <source media="(min-width: 1200px)" srcset="../../../assets/images/homepage/locally-sourced-desktop@2x.jpg">
+          <img src="../../../assets/images/homepage/locally-sourced-mobile@2x.jpg" alt="" class="benefitImage">
+        </picture>
+        <svg class="lines" xmlns="http://www.w3.org/2000/svg" width="160" height="76"><g fill="#9E7F66" fill-rule="evenodd"><path d="M0 70h160v6H0zM0 56h160v6H0zM0 42h160v6H0zM0 28h160v6H0zM0 14h160v6H0zM0 0h160v6H0z"/></g></svg>
+        <div class="curve_left_div">
+          <svg class="curve_left" xmlns="http://www.w3.org/2000/svg" width="895" height="320"><path fill="#5C6779" fill-rule="evenodd" d="M100 0h795v320H0V100C0 44.772 44.772 0 100 0z" opacity=".077"/></svg>
+        </div>
+      </div>
+      <div class="texts">
+        <svg xmlns="http://www.w3.org/2000/svg" width="71" height="7"><g fill="none" fill-rule="evenodd"><path fill="#9E7F66" d="M15 3h56v1H15z"/><circle cx="3.5" cy="3.5" r="3" stroke="#9E7F66"/></g></svg>
+        <h3>The most locally <br> sourced food</h3>
+        <p>All our ingredients come directly from our farm or local fishery. So you can be sure that you’re eating the freshest, most sustainable food.</p>
+      </div>
     </article>
   </section>
 
