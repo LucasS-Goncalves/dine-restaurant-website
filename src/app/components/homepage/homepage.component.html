@@ -31,8 +31,8 @@
           <source media="(min-width: 1200px)" srcset="../../../assets/images/homepage/enjoyable-place-desktop@2x.jpg">
           <img src="../../../assets/images/homepage/enjoyable-place-mobile@2x.jpg" alt="" class="benefitImage">
         </picture>
-        <svg class="curve_right" xmlns="http://www.w3.org/2000/svg" width="895" height="320"><path fill="#5C6779" fill-rule="evenodd" d="M795 0H0v320h895V100C895 44.772 850.228 0 795 0z" opacity=".077"/></svg>
       </div>
+      <svg class="curve_right" xmlns="http://www.w3.org/2000/svg" width="895" height="320"><path fill="#5C6779" fill-rule="evenodd" d="M795 0H0v320h895V100C895 44.772 850.228 0 795 0z" opacity=".077"/></svg>
       <div class="texts">
         <svg xmlns="http://www.w3.org/2000/svg" width="71" height="7"><g fill="none" fill-rule="evenodd"><path fill="#9E7F66" d="M15 3h56v1H15z"/><circle cx="3.5" cy="3.5" r="3" stroke="#9E7F66"/></g></svg>
         <h3>Enjoyable place <br> for all the family</h3>
@@ -48,9 +48,9 @@
           <img src="../../../assets/images/homepage/locally-sourced-mobile@2x.jpg" alt="" class="benefitImage">
         </picture>
         <svg class="lines" xmlns="http://www.w3.org/2000/svg" width="160" height="76"><g fill="#9E7F66" fill-rule="evenodd"><path d="M0 70h160v6H0zM0 56h160v6H0zM0 42h160v6H0zM0 28h160v6H0zM0 14h160v6H0zM0 0h160v6H0z"/></g></svg>
-        <div class="curve_left_div">
-          <svg class="curve_left" xmlns="http://www.w3.org/2000/svg" width="895" height="320"><path fill="#5C6779" fill-rule="evenodd" d="M100 0h795v320H0V100C0 44.772 44.772 0 100 0z" opacity=".077"/></svg>
-        </div>
+      </div>
+      <div class="curve_left_div">
+        <svg class="curve_left" xmlns="http://www.w3.org/2000/svg" width="895" height="320"><path fill="#5C6779" fill-rule="evenodd" d="M100 0h795v320H0V100C0 44.772 44.772 0 100 0z" opacity=".077"/></svg>
       </div>
       <div class="texts">
         <svg xmlns="http://www.w3.org/2000/svg" width="71" height="7"><g fill="none" fill-rule="evenodd"><path fill="#9E7F66" d="M15 3h56v1H15z"/><circle cx="3.5" cy="3.5" r="3" stroke="#9E7F66"/></g></svg>
@@ -67,18 +67,43 @@
       <p>We cater for all dietary requirements, but here’s a glimpse at some of our diner’s favourites. Our menu is revamped every season.</p>
     </article>
     <ul class="highlightsList">
-      <li *ngFor="let hightlight of highlights, let i = index">
+
+      <li>
         <div class="highlightImg_div">
           <picture>
-            <source media="(max-width: 767px)" srcset="{{hightlight.image1}}">
-            <source media="(min-width: 768px)" srcset="{{hightlight.image2}}">
-            <img src="{{hightlight.image1}}" alt="" class="highlightFood">
+            <source media="(max-width: 767px)" srcset="../../../assets/images/homepage/salmon-mobile@2x.jpg">
+            <source media="(min-width: 768px)" srcset="../../../assets/images/homepage/salmon-desktop-tablet@2x.jpg">
+            <img src="../../../assets/images/homepage/salmon-mobile@2x.jpg" alt="" class="highlightFood">
           </picture>
         </div>
-        <h4>{{hightlight.title}}</h4>
-        <p>{{hightlight.description}}</p>
-        <div class="borderBottom" *ngIf="i < highlights.length - 1"></div>
+        <h4>Seared Salmon Fillet</h4>
+        <p>Our locally sourced salmon served with a refreshing buckwheat summer salad.</p>
       </li>
+
+      <li>
+        <div class="highlightImg_div">
+          <picture>
+            <source media="(max-width: 767px)" srcset="../../../assets/images/homepage/beef-mobile@2x.jpg">
+            <source media="(min-width: 768px)" srcset="../../../assets/images/homepage/beef-desktop-tablet@2x.jpg">
+            <img src="../../../assets/images/homepage/beef-mobile@2x.jpg" alt="" class="highlightFood">
+          </picture>
+        </div>
+        <h4>Rosemary Filet Mignon</h4>
+        <p>Our prime beef served to your taste with a delicious choice of seasonal sides.</p>
+      </li>
+
+      <li>
+        <div class="highlightImg_div">
+          <picture>
+            <source media="(max-width: 767px)" srcset="../../../assets/images/homepage/chocolate-mobile@2x.jpg">
+            <source media="(min-width: 768px)" srcset="../../../assets/images/homepage/chocolate-desktop-tablet@2x.jpg">
+            <img src="../../../assets/images/homepage/chocolate-mobile@2x.jpg" alt="" class="highlightFood">
+          </picture>
+        </div>
+        <h4>Summer Fruit Chocolate Mousse</h4>
+        <p>Creamy mousse combined with summer fruits and dark chocolate shavings.</p>
+      </li>
+
     </ul>
   </section>
 

@@ -9,9 +9,11 @@
 }
 
 .benefit{
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 1.2rem;
 }
 
@@ -79,9 +81,13 @@
   .curve_right{
     display: block;
     position: absolute;
-    bottom: -22%;
+    bottom: 20%;
     right: 52%;
     z-index: -1;
+  }
+
+  .benefit:last-child .benefitsImage_container{
+    position: relative;
   }
 
   .benefit:last-child{
@@ -93,12 +99,11 @@
     position: absolute;
     width: 50%;
     bottom: 0;
-    right: 0;
+    right: 0%;
     z-index: -1;
   }
 
   .curve_left_div .curve_left{
-
     width: 100%;
     object-fit: none;
     object-position: left;
@@ -107,8 +112,8 @@
   .lines{
     display: block;
     position: absolute;
-    right: 2%;
-    top: 30%;
+    right: -4%;
+    top: 70%;
   }
 
   .benefit, .texts{
@@ -130,20 +135,29 @@
 
 @media(min-width: 1200px){
 
-  .benefit:first-child{
+   .benefit:first-child{
     top: -60px;
     flex-direction: row;
   }
 
   .curve_right{
-    top: 20%;
-    left: 0;
+    top: 43%;
+    left: -5%;
   }
 
   .benefit:last-child{
     flex-direction: row-reverse;
-    position: relative;
     bottom: -90px;
+  }
+
+  .curve_left_div{
+    width: auto;
+    right: 0;
+  }
+
+  .lines{
+    right: -9%;
+    top: 38%;
   }
 
   .benefitsImage_container{
@@ -153,11 +167,6 @@
 
   .benefit{
     gap: 5rem;
-  }
-
-  .lines{
-    right: 2%;
-    top: 30%;
   }
 
   .texts{
