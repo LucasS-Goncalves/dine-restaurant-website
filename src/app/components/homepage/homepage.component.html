@@ -76,8 +76,10 @@
             <img src="../../../assets/images/homepage/salmon-mobile@2x.jpg" alt="" class="highlightFood">
           </picture>
         </div>
-        <h4>Seared Salmon Fillet</h4>
-        <p>Our locally sourced salmon served with a refreshing buckwheat summer salad.</p>
+        <div class="highlightInfo">
+          <h4>Seared Salmon Fillet</h4>
+          <p>Our locally sourced salmon served with a refreshing buckwheat summer salad.</p>
+        </div>
       </li>
 
       <li>
@@ -88,8 +90,10 @@
             <img src="../../../assets/images/homepage/beef-mobile@2x.jpg" alt="" class="highlightFood">
           </picture>
         </div>
-        <h4>Rosemary Filet Mignon</h4>
-        <p>Our prime beef served to your taste with a delicious choice of seasonal sides.</p>
+        <div class="highlightInfo">
+          <h4>Rosemary Filet Mignon</h4>
+          <p>Our prime beef served to your taste with a delicious choice of seasonal sides.</p>
+        </div>
       </li>
 
       <li>
@@ -100,8 +104,10 @@
             <img src="../../../assets/images/homepage/chocolate-mobile@2x.jpg" alt="" class="highlightFood">
           </picture>
         </div>
-        <h4>Summer Fruit Chocolate Mousse</h4>
-        <p>Creamy mousse combined with summer fruits and dark chocolate shavings.</p>
+        <div class="highlightInfo">
+          <h4>Summer Fruit Chocolate Mousse</h4>
+          <p>Creamy mousse combined with summer fruits and dark chocolate shavings.</p>
+        </div>
       </li>
 
     </ul>
@@ -111,19 +117,25 @@
     <div class="image_div">
       <picture>
         <source media="(max-width: 767px)" srcset="../../../assets/images/homepage/family-gathering-mobile@2x.jpg">
-        <source media="(max-width: 1439px)" srcset="../../../assets/images/homepage/family-gathering-tablet@2x.jpg">
-        <source media="(max-width: 1439px)" srcset="../../../assets/images/homepage/family-gathering-desktop@2x.jpg">
-        <img src="../../../assets/images/homepage/family-gathering-mobile@2x.jpg" alt="" class="slidesImg">
+        <source media="(max-width: 1199px)" srcset="../../../assets/images/homepage/family-gathering-tablet@2x.jpg">
+        <source media="(min-width: 1200px)" srcset="../../../assets/images/homepage/family-gathering-desktop@2x.jpg">
+        <img src="../../../assets/images/homepage/family-gathering-mobile@2x.jpg" alt="" class="slideImg" #slideImg>
       </picture>
+      <svg class="lines" xmlns="http://www.w3.org/2000/svg" width="160" height="76"><g fill="#9E7F66" fill-rule="evenodd"><path d="M0 70h160v6H0zM0 56h160v6H0zM0 42h160v6H0zM0 28h160v6H0zM0 14h160v6H0zM0 0h160v6H0z"/></g></svg>
     </div>
-    <ul class="slidesOptions">
-      <li class="slideItem activate">FAMILY GATHERING</li>
-      <li class="slideItem">SPECIAL EVENTS</li>
-      <li class="slideItem">SOCIAL EVENTS</li>
-    </ul>
-    <h3>Family Gathering</h3>
-    <p>We love catering for entire families. So please bring everyone along for a special meal with your loved ones. We’ll provide a memorable experience for all.</p>
-    <button class="book_light_button">BOOK A TABLE</button>
+    <article>
+      <ul class="slidesOptions">
+        <li class="slideItem activate" (click)="changeSlide()">FAMILY GATHERING</li>
+        <li class="slideItem">SPECIAL EVENTS</li>
+        <li class="slideItem">SOCIAL EVENTS</li>
+      </ul>
+      <div class="slideInfo">
+        <h3 #slideTitle>Family Gathering</h3>
+        <p #slideDescription>We love catering for entire families. So please bring everyone along for a special meal with your loved ones. We’ll provide a memorable experience for all.</p>
+        <button class="book_light_button">BOOK A TABLE</button>
+      </div>
+    </article>
+    <svg class="curve_right" xmlns="http://www.w3.org/2000/svg" width="895" height="320"><path fill="#5C6779" fill-rule="evenodd" d="M795 0H0v320h895V100C895 44.772 850.228 0 795 0z" opacity=".077"/></svg>
   </section>
 
   <section class="reservation">

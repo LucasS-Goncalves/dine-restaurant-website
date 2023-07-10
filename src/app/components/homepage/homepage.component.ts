@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-homepage',
@@ -13,4 +13,10 @@ import { Component } from '@angular/core';
 })
 export class HomepageComponent{
 
+  @ViewChild('slideImg') slideImg!: ElementRef<HTMLImageElement>;
+
+  changeSlide(){
+    this.slideImg.nativeElement.src = "../../../assets/images/homepage/special-events-desktop@2x.jpg"
+    console.log('oi')
+  }
 }

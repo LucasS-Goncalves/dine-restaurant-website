@@ -18,6 +18,7 @@ hmtl{
   --shuttle-gray: rgb(92, 103, 121);
   --image-shadow: 0 80px 50px -15px rgb(36, 43, 55, .2);
   --border-bottom: #979797;
+  --line-color: #9E7F66;
 }
 
 p,h1,h2,h3,h4,h5,h6{
