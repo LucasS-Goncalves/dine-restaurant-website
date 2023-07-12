@@ -1,16 +1,16 @@
 .header{
   width: 100%;
-  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 }
 
 .headerPicture_container{
   width: 100%;
 }
 
-.headerFood{
+.headerPicture_container .headerImg{
   width: 100%;
   display: block;
 }
@@ -28,7 +28,11 @@
   z-index: 1;
 }
 
-.headerContent h1 > img{
+.headerContent h1{
+  margin-bottom: .4rem;
+}
+
+.headerContent h1 .logo{
   width: 82.4px;
   height: 32px;
 }
@@ -42,7 +46,7 @@
 }
 
 .headerContent p{
-  width: 87%;
+  width: 327px;
   font-size: 1rem;
   font-weight: 400;
   line-height: 26px;
@@ -66,9 +70,9 @@
 
 .book_dark_button::before{
   width: 100%;
+  height: 0;
   content: "";
   position: absolute;
-  height: 0;
   top: 0;
   left: 0;
   background-color: var(--white);
@@ -86,11 +90,11 @@
 
 @media(min-width: 768px){
   .headerContent{
-    padding: 0 0 14rem 0;
     gap: 2rem;
+    padding: 0 0 14rem 0;
   }
 
-  .headerContent h1 > img{
+  .headerContent h1 .logo{
     width: 103px;
     height: 40px;
   }
@@ -104,17 +108,16 @@
   .headerContent p{
     width: 573px;
     font-size: 1.25rem;
-    font-size: 1.25rem;
     line-height: 30px;
   }
 }
 
 @media(min-width: 1200px){
   .headerPicture_container{
-    height: 820px;
+    height: 720px;
   }
 
-  .headerFood{
+  .headerPicture_container .headerImg{
     height: 100%;
     object-fit: cover;
     object-position: center;
@@ -122,22 +125,22 @@
 
   .headerContent{
     width: 507px;
+    align-items: flex-start;
+    gap: 1.5rem;
     position: absolute;
-    padding: 0;
     top: 7%;
     left: 5.5%;
+    padding: 0;
     background-color: transparent;
-    gap: 1.5rem;
-    align-items: flex-start;
   }
 
-  .headerContent h1 > img{
-    margin-bottom: 95%;
+  .headerContent h1 .logo{
+    margin-bottom: 60%;
   }
 
   .headerContent h2{
-    font-size: 5rem;
-    line-height: 80px;
+    font-size: 4rem;
+    line-height: 70px;
     letter-spacing: -1px;
     text-align: start;
   }
@@ -146,6 +149,21 @@
     width: 445px;
     margin-bottom: 1.2rem;
     text-align: start;
+  }
+}
+
+@media(min-width: 1440px){
+  .headerPicture_container{
+    height: 820px;
+  }
+
+  .headerContent h1 .logo{
+    margin-bottom: 95%;
+  }
+
+  .headerContent h2{
+    font-size: 5rem;
+    line-height: 80px;
   }
 }
 

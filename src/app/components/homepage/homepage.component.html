@@ -4,7 +4,7 @@
       <source media="(max-width: 767px)" srcset="../../../assets/images/homepage/hero-bg-mobile@2x.svg">
       <source media="(max-width: 1199px)" srcset="../../../assets/images/homepage/hero-bg-tablet@2x.svg">
       <source media="(min-width: 1200px)" srcset="../../../assets/images/homepage/hero-bg-desktop@2x.svg">
-      <img class="headerFood" alt="" src="../../../assets/images/homepage/hero-bg-mobile@2x.svg">
+      <img class="headerImg" alt="" src="../../../assets/images/homepage/hero-bg-mobile@2x.svg">
     </picture>
   </div>
   <article class="headerContent">
@@ -17,11 +17,13 @@
       Experience our seasonal menu in beautiful country surroundings. Eat the freshest produce from the comfort of our farmhouse.
     </p>
     <button class="book_dark_button">
-        BOOK A TABLE
+      BOOK A TABLE
     </button>
   </article>
 </header>
+
 <main class="main">
+
   <section class="benefits">
     <article class="benefit">
       <div class="benefitsImage_container">
@@ -29,7 +31,7 @@
           <source media="(max-width: 767px)" srcset="../../../assets/images/homepage/enjoyable-place-mobile@2x.jpg">
           <source media="(max-width: 1199px)" srcset="../../../assets/images/homepage/enjoyable-place-tablet@2x.jpg">
           <source media="(min-width: 1200px)" srcset="../../../assets/images/homepage/enjoyable-place-desktop@2x.jpg">
-          <img src="../../../assets/images/homepage/enjoyable-place-mobile@2x.jpg" alt="" class="benefitImage">
+          <img src="../../../assets/images/homepage/enjoyable-place-mobile@2x.jpg" alt="Enjoyable place" class="benefitImage">
         </picture>
       </div>
       <svg class="curve_right" xmlns="http://www.w3.org/2000/svg" width="895" height="320"><path fill="#5C6779" fill-rule="evenodd" d="M795 0H0v320h895V100C895 44.772 850.228 0 795 0z" opacity=".077"/></svg>
@@ -49,9 +51,11 @@
         </picture>
         <svg class="lines" xmlns="http://www.w3.org/2000/svg" width="160" height="76"><g fill="#9E7F66" fill-rule="evenodd"><path d="M0 70h160v6H0zM0 56h160v6H0zM0 42h160v6H0zM0 28h160v6H0zM0 14h160v6H0zM0 0h160v6H0z"/></g></svg>
       </div>
+
       <div class="curve_left_div">
         <svg class="curve_left" xmlns="http://www.w3.org/2000/svg" width="895" height="320"><path fill="#5C6779" fill-rule="evenodd" d="M100 0h795v320H0V100C0 44.772 44.772 0 100 0z" opacity=".077"/></svg>
       </div>
+
       <div class="texts">
         <svg xmlns="http://www.w3.org/2000/svg" width="71" height="7"><g fill="none" fill-rule="evenodd"><path fill="#9E7F66" d="M15 3h56v1H15z"/><circle cx="3.5" cy="3.5" r="3" stroke="#9E7F66"/></g></svg>
         <h3>The most locally <br> sourced food</h3>
@@ -116,18 +120,18 @@
   <section class="slides">
     <div class="image_div">
       <picture>
-        <source media="(max-width: 767px)" srcset="../../../assets/images/homepage/family-gathering-mobile@2x.jpg">
-        <source media="(max-width: 1199px)" srcset="../../../assets/images/homepage/family-gathering-tablet@2x.jpg">
-        <source media="(min-width: 1200px)" srcset="../../../assets/images/homepage/family-gathering-desktop@2x.jpg">
+        <source #mobileImg media="(max-width: 767px)" srcset="../../../assets/images/homepage/family-gathering-mobile@2x.jpg">
+        <source #tabletImg media="(max-width: 1199px)" srcset="../../../assets/images/homepage/family-gathering-tablet@2x.jpg">
+        <source #desktopImg media="(min-width: 1200px)" srcset="../../../assets/images/homepage/family-gathering-desktop@2x.jpg">
         <img src="../../../assets/images/homepage/family-gathering-mobile@2x.jpg" alt="" class="slideImg" #slideImg>
       </picture>
       <svg class="lines" xmlns="http://www.w3.org/2000/svg" width="160" height="76"><g fill="#9E7F66" fill-rule="evenodd"><path d="M0 70h160v6H0zM0 56h160v6H0zM0 42h160v6H0zM0 28h160v6H0zM0 14h160v6H0zM0 0h160v6H0z"/></g></svg>
     </div>
     <article>
-      <ul class="slidesOptions">
-        <li class="slideItem activate" (click)="changeSlide()">FAMILY GATHERING</li>
-        <li class="slideItem">SPECIAL EVENTS</li>
-        <li class="slideItem">SOCIAL EVENTS</li>
+      <ul class="slidesOptions" #slideOptions>
+        <li class="slideItem activate" (click)="changeSlide('family', $event)">FAMILY GATHERING</li>
+        <li class="slideItem" (click)="changeSlide('special', $event)">SPECIAL EVENTS</li>
+        <li class="slideItem" (click)="changeSlide('social', $event)">SOCIAL EVENTS</li>
       </ul>
       <div class="slideInfo">
         <h3 #slideTitle>Family Gathering</h3>
@@ -141,8 +145,8 @@
   <section class="reservation">
     <div class="imageContainer">
       <picture>
-        <source media="(max-width:1439px)" srcset="../../../assets/images/booking/hero-bg-tablet@2x.jpg">
-        <source media="(min-width:1440px)" srcset="../../../assets/images/booking/hero-bg-desktop@2x.jpg">
+        <source media="(max-width:1199px)" srcset="../../../assets/images/booking/hero-bg-tablet@2x.jpg">
+        <source media="(min-width:1200px)" srcset="../../../assets/images/booking/hero-bg-desktop@2x.jpg">
         <img src="../../../assets/images/booking/hero-bg-tablet@2x.jpg" alt="" class="reservationImage">
       </picture>
     </div>

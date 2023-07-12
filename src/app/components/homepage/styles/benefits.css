@@ -4,7 +4,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 2rem;
+  gap: 6rem;
   z-index: 1;
 }
 
@@ -17,72 +17,92 @@
   gap: 1.2rem;
 }
 
+.benefit .benefitsImage_container{
+  width: 327px;
+  height: 400px;
+}
+
+.benefit .benefitsImage_container .benefitImage{
+  width: 100%;
+  display: block;
+  box-shadow: var(--image-shadow);
+}
+
+.benefit .curve_right, .benefit .curve_left_div, .benefit .lines{
+  display: none;
+}
+
+.benefit .texts{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  text-align: center;
+}
+
+.benefit .texts svg {
+  margin-bottom: 1.5rem;
+}
+
+.benefit .texts h3{
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 40px;
+  letter-spacing: -.4px;
+  color: var(--ebony-clay);
+}
+
+.benefit .texts p{
+  width: 327px;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 26px;
+  color: var(--ebony-clay);
+}
+
 .benefit:first-child{
+  gap: 0;
+}
+
+.benefit:first-child .texts svg{
+  margin-top: 0;
+}
+
+.benefit:first-child .benefitsImage_container{
   position: relative;
   top: -70px;
   z-index: 1;
 }
 
 .benefit:last-child{
+  gap: 0;
   padding-bottom: 4rem;
 }
 
-.benefitsImage_container{
-  width: 87%;
-}
-
-.benefitImage{
-  width: 100%;
-  display: block;
-  box-shadow: var(--image-shadow);
-}
-
-.curve_right, .curve_left_div, .lines{
-  display: none;
-}
-
-.texts{
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
-  align-items: center;
-  text-align: center;
-}
-
-.texts svg {
-  margin: 1.5rem 0;
-}
-
-.texts h3{
-  font-size: 2rem;
-  font-weight: 800;
-  color: var(--ebony-clay);
-  line-height: 40px;
-  letter-spacing: -.4px;
-}
-
-.texts p{
-  width: 87%;
-  font-size: 1rem;
-  font-weight: 400;
-  color: var(--ebony-clay);
-  line-height: 26px;
+.benefit:last-child .texts svg {
+  margin-top: 70px;
 }
 
 @media(min-width: 768px){
-  .benefit:first-child{
-    top: -90px;
+
+  .benefits{
+    gap: 8rem;
   }
 
-  .benefit:first-child .benefitsImage_container{
+  .benefit{
     position: relative;
   }
 
-  .curve_right{
+  .benefit .benefitsImage_container{
+    width: 573px;
+    height: 360px;
+  }
+
+  .benefit .curve_right{
     display: block;
     position: absolute;
-    bottom: 20%;
-    right: 52%;
+    top: 24%;
+    right: 51%;
     z-index: -1;
   }
 
@@ -90,86 +110,102 @@
     position: relative;
   }
 
-  .benefit:last-child{
-    position: relative;
-  }
-
-  .curve_left_div{
+  .benefit .curve_left_div{
     display: block;
     position: absolute;
     width: 50%;
     bottom: 0;
-    right: 0%;
+    right: 0;
     z-index: -1;
   }
 
-  .curve_left_div .curve_left{
+  .benefit .curve_left_div .curve_left{
     width: 100%;
     object-fit: none;
     object-position: left;
   }
 
-  .lines{
+  .benefit .benefitsImage_container .lines{
     display: block;
     position: absolute;
-    right: -4%;
-    top: 70%;
+    right: -10%;
+    bottom: 17%;
   }
 
   .benefit, .texts{
     gap: 1.5rem;
   }
 
-  .texts h3{
+  .benefit .texts h3{
     font-size: 3rem;
     line-height: 48px;
     letter-spacing: -.5px;
   }
 
-  .texts p{
-    width: 470px;
+  .benefit .texts p{
+    width: 457px;
     font-size: 1.25rem;
     line-height: 30px;
+  }
+
+  .benefit:first-child .benefitsImage_container{
+    top: -90px;
+  }
+
+  .benefit:last-child{
+    padding-bottom: 8rem;
+  }
+
+  .benefit:last-child .texts svg {
+    margin-top: 90px;
   }
 }
 
 @media(min-width: 1200px){
 
-   .benefit:first-child{
-    top: -60px;
-    flex-direction: row;
+  .benefits{
+    gap: 0;
   }
 
-  .curve_right{
-    top: 43%;
-    left: -5%;
+  .benefit:first-child{
+    flex-direction: row;
+    gap: 4rem;
   }
 
   .benefit:last-child{
     flex-direction: row-reverse;
+    gap: 4rem;
+  }
+
+  .benefit:first-child .benefitsImage_container{
+    top: -60px;
+  }
+
+  .benefit .curve_right{
+    top: 43%;
+    left: -5%;
+  }
+
+  .benefit:last-child .benefitsImage_container{
     bottom: -90px;
   }
 
-  .curve_left_div{
+  .benefit .curve_left_div{
     width: auto;
     right: 0;
   }
 
-  .lines{
+  .benefit .lines{
     right: -9%;
     top: 38%;
   }
 
-  .benefitsImage_container{
+  .benefit .benefitsImage_container{
     width: 540px;
     height: 720px;
   }
 
-  .benefit{
-    gap: 5rem;
-  }
-
-  .texts{
+  .benefit .texts{
     align-items: flex-start;
     text-align: start;
   }
