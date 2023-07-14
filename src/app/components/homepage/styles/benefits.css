@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: center;
   gap: 6rem;
-  z-index: 1;
+  z-index: 999;
 }
 
 .benefit{
@@ -15,11 +15,13 @@
   align-items: center;
   justify-content: center;
   gap: 1.2rem;
+  z-index: 999;
 }
 
 .benefit .benefitsImage_container{
   width: 327px;
   height: 400px;
+  z-index: 999;
 }
 
 .benefit .benefitsImage_container .benefitImage{
@@ -71,7 +73,7 @@
 .benefit:first-child .benefitsImage_container{
   position: relative;
   top: -70px;
-  z-index: 1;
+  z-index: 3;
 }
 
 .benefit:last-child{
@@ -174,6 +176,7 @@
 
   .benefit:last-child{
     flex-direction: row-reverse;
+    align-items: flex-end;
     gap: 4rem;
   }
 
@@ -187,7 +190,7 @@
   }
 
   .benefit:last-child .benefitsImage_container{
-    bottom: -90px;
+    bottom: calc(-8rem - 60px);
   }
 
   .benefit .curve_left_div{
@@ -201,12 +204,30 @@
   }
 
   .benefit .benefitsImage_container{
-    width: 540px;
-    height: 720px;
+    width: 440px;
+    height: 586.6px;
   }
 
   .benefit .texts{
     align-items: flex-start;
     text-align: start;
+
+  }
+
+  .benefit .texts h3{
+    font-size: 2.5rem;
+  }
+
+  .benefit .texts p{
+    width: 457px;
+    font-size: 1.1rem;
+  }
+}
+
+@media(min-width: 1440px){
+
+  .benefit .benefitsImage_container{
+    width: 540px;
+    height: 720px;
   }
 }

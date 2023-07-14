@@ -16,7 +16,7 @@
     <p>
       Experience our seasonal menu in beautiful country surroundings. Eat the freshest produce from the comfort of our farmhouse.
     </p>
-    <button class="book_dark_button">
+    <button class="book_dark_button test">
       BOOK A TABLE
     </button>
   </article>
@@ -80,10 +80,10 @@
             <img src="../../../assets/images/homepage/salmon-mobile@2x.jpg" alt="" class="highlightFood">
           </picture>
         </div>
-        <div class="highlightInfo">
+        <article class="highlightInfo">
           <h4>Seared Salmon Fillet</h4>
           <p>Our locally sourced salmon served with a refreshing buckwheat summer salad.</p>
-        </div>
+        </article>
       </li>
 
       <li>
@@ -94,10 +94,10 @@
             <img src="../../../assets/images/homepage/beef-mobile@2x.jpg" alt="" class="highlightFood">
           </picture>
         </div>
-        <div class="highlightInfo">
+        <article class="highlightInfo">
           <h4>Rosemary Filet Mignon</h4>
           <p>Our prime beef served to your taste with a delicious choice of seasonal sides.</p>
-        </div>
+        </article>
       </li>
 
       <li>
@@ -108,26 +108,26 @@
             <img src="../../../assets/images/homepage/chocolate-mobile@2x.jpg" alt="" class="highlightFood">
           </picture>
         </div>
-        <div class="highlightInfo">
+        <article class="highlightInfo">
           <h4>Summer Fruit Chocolate Mousse</h4>
           <p>Creamy mousse combined with summer fruits and dark chocolate shavings.</p>
-        </div>
+        </article>
       </li>
 
     </ul>
   </section>
 
   <section class="slides">
-    <div class="image_div">
+    <div class="image_div" #slideImgDiv>
       <picture>
         <source #mobileImg media="(max-width: 767px)" srcset="../../../assets/images/homepage/family-gathering-mobile@2x.jpg">
         <source #tabletImg media="(max-width: 1199px)" srcset="../../../assets/images/homepage/family-gathering-tablet@2x.jpg">
         <source #desktopImg media="(min-width: 1200px)" srcset="../../../assets/images/homepage/family-gathering-desktop@2x.jpg">
         <img src="../../../assets/images/homepage/family-gathering-mobile@2x.jpg" alt="" class="slideImg" #slideImg>
       </picture>
-      <svg class="lines" xmlns="http://www.w3.org/2000/svg" width="160" height="76"><g fill="#9E7F66" fill-rule="evenodd"><path d="M0 70h160v6H0zM0 56h160v6H0zM0 42h160v6H0zM0 28h160v6H0zM0 14h160v6H0zM0 0h160v6H0z"/></g></svg>
+      <svg class="lines_slideSection" xmlns="http://www.w3.org/2000/svg" width="160" height="76"><g fill="#9E7F66" fill-rule="evenodd"><path d="M0 70h160v6H0zM0 56h160v6H0zM0 42h160v6H0zM0 28h160v6H0zM0 14h160v6H0zM0 0h160v6H0z"/></g></svg>
     </div>
-    <article>
+    <article class="slideInfo_container">
       <ul class="slidesOptions" #slideOptions>
         <li class="slideItem activate" (click)="changeSlide('family', $event)">FAMILY GATHERING</li>
         <li class="slideItem" (click)="changeSlide('special', $event)">SPECIAL EVENTS</li>
@@ -139,7 +139,7 @@
         <button class="book_light_button">BOOK A TABLE</button>
       </div>
     </article>
-    <svg class="curve_right" xmlns="http://www.w3.org/2000/svg" width="895" height="320"><path fill="#5C6779" fill-rule="evenodd" d="M795 0H0v320h895V100C895 44.772 850.228 0 795 0z" opacity=".077"/></svg>
+    <svg class="curve_right_slideSection" xmlns="http://www.w3.org/2000/svg" width="895" height="320"><path fill="#5C6779" fill-rule="evenodd" d="M795 0H0v320h895V100C895 44.772 850.228 0 795 0z" opacity=".077"/></svg>
   </section>
 
   <section class="reservation">
