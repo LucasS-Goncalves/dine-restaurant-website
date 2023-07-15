@@ -1,7 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [];
+import { HomepageComponent } from './components/homepage/homepage.component';
+import { BookingComponent } from './components/booking/booking.component';
+
+const routes: Routes = [
+  { path: '', component: HomepageComponent },
+  { path: 'booking', component: BookingComponent },
+
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

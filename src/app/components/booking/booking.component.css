@@ -1,0 +1,120 @@
+.headerPicture_container{
+  width: 100%;
+  position: relative;
+}
+
+.headerPicture_container .headerImg{
+  display: block;
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.headerContent{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  color: var(--white);
+}
+
+.headerContent .logo{
+  width: 82px;
+  height: 32px;
+  margin-top: 3.5rem;
+}
+
+.headerContent .headerTexts{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+}
+
+.headerContent .headerTexts h2{
+  font-size: 2rem;
+  font-weight: 300;
+  line-height: 40px;
+  letter-spacing: -.4px;
+}
+
+.headerContent .headerTexts p{
+  width: 327px;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 26px;
+  text-align: center;
+}
+
+.headerContent .reserve_button{
+  width: 327px;
+  height: 64px;
+  position: relative;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  border: 1px solid var(--white);
+  background: transparent;
+  color: var(--white);
+  cursor: pointer;
+  transition: .3s;
+}
+
+.headerContent .reserve_button::before{
+  content: "";
+  position: absolute;
+  background-color: var(--white);
+  width: 100%;
+  height: 0;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: .3s;
+}
+
+.headerContent .reserve_button:hover{
+  color: var(--cod-gray);
+}
+
+.headerContent .reserve_button:hover::before{
+  height: 100%;
+}
+
+@media(min-width: 768px){
+
+  .headerContent .logo{
+    width: 103px;
+    height: 40px;
+    position: absolute;
+    top: 15%;
+    left: 5%;
+    margin-top: 0rem;
+  }
+
+  .headerContent .headerTexts{
+    margin-top: 7rem;
+  }
+
+  .headerContent .headerTexts h2{
+    font-size: 3rem;
+    line-height: 64px;
+    letter-spacing: -.6px;
+  }
+
+  .headerContent .headerTexts p{
+    width: 573px;
+    font-size: 1.25rem;
+    line-height: 30px;
+  }
+
+  .headerContent .reserve_button{
+    display: none;
+  }
+}
+
