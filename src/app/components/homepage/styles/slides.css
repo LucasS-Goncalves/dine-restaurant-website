@@ -1,6 +1,6 @@
 @keyframes fade_from_left{
   from{
-    translate: -100%;
+    translate: -20%;
     opacity: .2;
   }
 
@@ -12,7 +12,7 @@
 
 @keyframes fade_from_right{
   from{
-    translate: 100%;
+    translate: 20%;
     opacity: .3;
   }
 

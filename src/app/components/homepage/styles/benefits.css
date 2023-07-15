@@ -5,7 +5,6 @@
   align-items: center;
   justify-content: center;
   gap: 6rem;
-  z-index: 999;
 }
 
 .benefit{
@@ -15,13 +14,11 @@
   align-items: center;
   justify-content: center;
   gap: 1.2rem;
-  z-index: 999;
 }
 
 .benefit .benefitsImage_container{
   width: 327px;
   height: 400px;
-  z-index: 999;
 }
 
 .benefit .benefitsImage_container .benefitImage{
@@ -211,7 +208,6 @@
   .benefit .texts{
     align-items: flex-start;
     text-align: start;
-
   }
 
   .benefit .texts h3{
@@ -221,6 +217,10 @@
   .benefit .texts p{
     width: 457px;
     font-size: 1.1rem;
+  }
+
+  .benefit:last-child .texts{
+    padding-bottom: 4rem;
   }
 }
 
