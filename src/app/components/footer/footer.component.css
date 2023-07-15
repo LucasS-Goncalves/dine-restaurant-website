@@ -1,16 +1,25 @@
-footer{
+.footer{
   display: flex;
   flex-direction: column;
-  gap: 3rem;
-  padding: 6rem 0;
   align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  padding: 5rem 0;
+  color: var(--white);
   background-color: var(--cod-gray);
+}
+
+.information{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
   font-size: .875rem;
   font-weight: 400;
-  text-align: center;
-  color: var(--white);
   line-height: 28px;
   letter-spacing: 2px;
+  text-align: center;
   text-transform: uppercase;
 }
 
@@ -22,4 +31,34 @@ footer{
 .openTimesList{
   list-style-type: none;
 }
+
+@media(min-width: 768px){
+  .footer{
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 7rem;
+    padding: 4.5rem 0rem;
+    padding-right: 25%;
+  }
+
+  .information{
+    align-items: flex-start;
+    text-align: start;
+  }
+}
+
+@media(min-width: 1200px){
+
+  .footer{
+    gap: 10rem;
+    padding-right: 15%;
+  }
+
+  .information{
+    flex-direction: row;
+    gap: 10rem;
+  }
+}
+
 
