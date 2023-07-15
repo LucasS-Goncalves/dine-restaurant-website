@@ -26,6 +26,7 @@
 .logo{
   width: 103.42px;
   height: 40px;
+  cursor: pointer;
 }
 
 .openTimesList{
