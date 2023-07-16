@@ -89,6 +89,10 @@
   height: 100%;
 }
 
+#date{
+  border: none;
+}
+
 @media(min-width: 768px){
 
   .headerContent .logo{
