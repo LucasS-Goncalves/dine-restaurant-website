@@ -89,9 +89,84 @@
   height: 100%;
 }
 
-#date{
-  border: none;
+.form{
+  width: 87%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
+
+.form .name_div, .form .email_div{
+  width: 263px;
+}
+
+.form .name_div input, .form .email_div input{
+  box-sizing: border-box;
+  width: 100%;
+  padding-bottom: .8rem;
+  padding-left: .8rem;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #8E8E8E;
+  font-size: 1.25rem;
+  color: #8E8E8E;
+}
+
+.form .date_div, .form .time_div{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form .date_div label, .form .time_div label{
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+
+.form .date_div div, .form .time_div div{
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  width: 263px;
+}
+
+.form .date_div div input{
+  box-sizing: border-box;
+  width: 73px;
+  height: 43px;
+  padding-bottom: .9rem;
+  padding-left: .9rem;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #8E8E8E;
+}
+
+.form .date_div div input:last-child{
+  width: 88px;
+}
+
+.form .date_div div input::placeholder,
+.form .time_div div input::placeholder{
+  font-size: 1.25rem;
+  color: #8E8E8E;
+}
+
+.form .time_div div input, .form .time_div div select{
+  box-sizing: border-box;
+  width: 73px;
+  height: 43px;
+  padding-bottom: .9rem;
+  padding-left: .9rem;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #8E8E8E;
+}
+
+.form .time_div div select{
+  font-size: 1.25rem;
+}
+
+
 
 @media(min-width: 768px){
 
