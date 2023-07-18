@@ -22,7 +22,7 @@
     </div>
   </article>
 </header>
-<main style="padding: 4rem;">
+<main style="padding-bottom: 8rem;">
   <form class="form">
 
     <div class="name_div">
@@ -47,10 +47,16 @@
       <div>
         <input type="number" name="hour" id="" placeholder="09">
         <input type="number" name="" id="" placeholder="00">
-        <select name="" id="">
-          <option value="AM">AM</option>
-          <option value="PM">PM</option>
-        </select>
+        <div class="shifts_div" #shifts_div (click)="openShiftsDiv()">
+          <span class="shiftPicked">
+            AM
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="11"><path fill="none" stroke="#9E7F66" stroke-width="2" d="M1 1l8 8 8-8"/></svg>
+          </span>
+          <ul class="shiftsOptions">
+            <li>AM</li>
+            <li>PM</li>
+          </ul>
+        </div>
       </div>
     </div>
 
