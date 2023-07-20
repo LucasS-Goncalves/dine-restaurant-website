@@ -22,7 +22,7 @@
     </div>
   </article>
 </header>
-<main style="padding-bottom: 8rem;">
+<main class="main">
   <form class="form">
 
     <div class="name_div">
@@ -49,12 +49,20 @@
         <input type="number" name="" id="" placeholder="00">
         <div class="shifts_div" #shifts_div (click)="openShiftsDiv()">
           <span class="shiftPicked">
-            AM
+            {{shiftPicked}}
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="11"><path fill="none" stroke="#9E7F66" stroke-width="2" d="M1 1l8 8 8-8"/></svg>
           </span>
-          <ul class="shiftsOptions">
-            <li>AM</li>
-            <li>PM</li>
+          <ul class="shiftsOptions" #shiftsOptions>
+            <li class="activate" (click)="switchShifts($event)">
+              <span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="11"><path fill="none" stroke="#9E7F66" stroke-width="2" d="M1 5.897l2.767 2.767L11.432 1"/></svg>
+              </span>
+              AM
+            </li>
+            <li (click)="switchShifts($event)">
+              <span></span>
+              PM
+            </li>
           </ul>
         </div>
       </div>

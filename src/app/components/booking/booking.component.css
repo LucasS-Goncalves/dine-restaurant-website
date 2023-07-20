@@ -85,15 +85,27 @@
   color: var(--cod-gray);
 }
 
+.main{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 0;
+}
+
 .headerContent .reserve_button:hover::before{
   height: 100%;
 }
 
 .form{
-  width: 87%;
+  width: 327px;
+  height: 585px;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: 2rem;
+  box-shadow: 0 2px 30px -1px rgb(77, 77, 77, 0.2);
 }
 
 .form .name_div, .form .email_div{
@@ -109,7 +121,7 @@
   border: none;
   border-bottom: 1px solid #8E8E8E;
   font-size: 1.25rem;
-  color: #8E8E8E;
+  color: var(--cod-gray);
 }
 
 .form .date_div, .form .time_div{
@@ -180,7 +192,8 @@
 }
 
 .form .time_div div .shifts_div .shiftsOptions{
-  width: 100%;
+  width: 106px;
+  height: 103px;
   list-style-type: none;
   box-sizing: border-box;
   display: flex;
@@ -203,6 +216,11 @@
 
 .form .time_div div .shifts_div .shiftsOptions li {
   font-size: 1.25rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: .6rem;
 }
 
 @media(min-width: 768px){

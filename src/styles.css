@@ -4,10 +4,11 @@
   font-family: 'League Spartan', sans-serif;
   font-size: 16px;
   scroll-behavior: smooth;
+
 }
 
 hmtl{
-  height: 100vh;
+  height: 100%;
 }
 
 :root{
