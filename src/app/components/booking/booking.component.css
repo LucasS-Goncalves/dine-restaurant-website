@@ -212,15 +212,31 @@
 
 .form .time_div div .shifts_div.open .shiftsOptions{
   visibility: visible;
+
 }
 
 .form .time_div div .shifts_div .shiftsOptions li {
+  width: 100%;
   font-size: 1.25rem;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   gap: .6rem;
+  position: relative;
+}
+
+.form .time_div div .shifts_div .shiftsOptions li span{
+  position: absolute;
+  pointer-events: none;
+  left: 15px;
+}
+
+.form .people_div{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 @media(min-width: 768px){

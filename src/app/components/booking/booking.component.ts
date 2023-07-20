@@ -9,6 +9,7 @@ export class BookingComponent implements OnInit{
 
   thisYear = new Date().getFullYear();
   shiftPicked = 'AM';
+  people = 1;
   @ViewChild('shifts_div') shifts_div!: ElementRef<HTMLDivElement>;
   @ViewChild('shiftsOptions') shiftsOptions!: ElementRef<HTMLUListElement>;
 
