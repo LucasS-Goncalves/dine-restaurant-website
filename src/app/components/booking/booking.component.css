@@ -105,7 +105,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 2.4rem;
+  gap: 2.2rem;
   background-color: var(--white);
   box-shadow: 0px 80px 70px -25px rgba(41, 41, 41, 0.3);
   z-index: 2;
@@ -312,6 +312,7 @@
   box-shadow: 0 2px 20px 0 rgb(77, 77, 77, 0.2);
 }
 
+
 @media(min-width: 768px){
 
   .headerContent .logo{
@@ -342,6 +343,41 @@
   .headerContent .reserve_button{
     display: none;
   }
+
+  .form{
+    width: 540px;
+    height: 545px;
+    gap: 2rem;
+  }
+
+  .form .name_div, .form .email_div{
+    width: 444px;
+  }
+
+  .form .date_div, .form .time_div{
+    width: 444px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0;
+  }
+
+  .form .date_div div input:last-child{
+    width: 97px;
+  }
+
+  .form .date_div div, .form .time_div div{
+    gap: 0
+  }
+
+  .form .date_div div input, .form .time_div div input{
+    width: 80px;
+  }
+
+  .form .time_div div .shifts_div{
+    width: 97px;
+  }
+
 }
 
 @media(min-width: 1200px){
