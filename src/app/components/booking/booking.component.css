@@ -302,7 +302,7 @@
   left: 0;
   transform:scaleX(0);
   background-color: var(--white);
-  transition: .3s;
+  transition: .4s;
   z-index: -1;
 }
 
@@ -460,4 +460,6 @@
     z-index: -1;
   }
 }
+
+
 
