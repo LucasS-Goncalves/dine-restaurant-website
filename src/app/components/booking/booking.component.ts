@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-booking',
@@ -7,6 +8,7 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 })
 export class BookingComponent implements OnInit{
 
+  reservationForm!: FormGroup;
   thisYear = new Date().getFullYear();
   shiftPicked = 'AM';
   people = 1;
@@ -15,6 +17,11 @@ export class BookingComponent implements OnInit{
 
   ngOnInit(): void {
 
+    this.reservationForm = new FormGroup({
+      'name': new FormControl(null),
+      'email': new FormControl(null),
+      'shift': new FormControl('AM')
+    })
   }
 
   openShiftsDiv(){
@@ -41,3 +48,4 @@ export class BookingComponent implements OnInit{
     activatedSpan.innerHTML = '';
   }
 }
+

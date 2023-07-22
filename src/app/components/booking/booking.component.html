@@ -23,11 +23,11 @@
   </article>
 </header>
 <main class="main">
-  <form class="form">
+  <form class="form" [formGroup]="reservationForm">
 
-      <input type="text" class="nameInput" placeholder="Name" >
+      <input type="text" class="nameInput" placeholder="Name" formControlName="name">
 
-      <input type="email" class="emailInput" placeholder="Email" >
+      <input type="email" class="emailInput" placeholder="Email" formControlName="email">
 
     <div class="date_container">
       <label for="">Pick a date</label>
@@ -49,7 +49,7 @@
         <div class="shifts_div" #shifts_div (click)="openShiftsDiv()">
 
           <span class="shiftPicked">
-            {{shiftPicked}}
+            <input type="text" value="{{shiftPicked}}" formControlName="shift" readonly>
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="11"><path fill="none" stroke="#9E7F66" stroke-width="2" d="M1 1l8 8 8-8"/></svg>
           </span>
 
