@@ -22,7 +22,6 @@
   left: 0;
   right: 0;
   margin: 0 auto;
-  z-index: 1;
   color: var(--white);
 }
 
@@ -267,6 +266,8 @@
 }
 
 .form .people_div button{
+  width: 30px;
+  height: 30px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -289,7 +290,7 @@
   color: var(--white);
   transition: .3s;
   cursor: pointer;
-  z-index: 2;
+  z-index: 1;
 }
 
 .form .submitForm_button::before{
