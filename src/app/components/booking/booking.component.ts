@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-booking',
@@ -10,7 +10,7 @@ export class BookingComponent implements OnInit{
 
   reservationForm!: FormGroup;
   thisYear = new Date().getFullYear();
-  shiftPicked = 'AM';
+  shiftPicked!: string;
   people = 1;
   @ViewChild('shifts_div') shifts_div!: ElementRef<HTMLDivElement>;
   @ViewChild('shiftsOptions') shiftsOptions!: ElementRef<HTMLUListElement>;
@@ -18,9 +18,18 @@ export class BookingComponent implements OnInit{
   ngOnInit(): void {
 
     this.reservationForm = new FormGroup({
-      'name': new FormControl(null),
-      'email': new FormControl(null),
-      'shift': new FormControl('AM')
+      'name': new FormControl(null, [Validators.required]),
+      'email': new FormControl(null, [Validators.required, Validators.email]),
+      'date': new FormGroup({
+        'month': new FormControl(null, [Validators.required]),
+        'day': new FormControl(null, [Validators.required]),
+        'year': new FormControl(null, [Validators.required])
+      }),
+      'time': new FormGroup({
+        'hour': new FormControl(null, [Validators.required]),
+        'minute': new FormControl(null, [Validators.required]),
+        'shift': new FormControl('AM', [Validators.required]),
+      })
     })
   }
 

@@ -25,31 +25,50 @@
 <main class="main">
   <form class="form" [formGroup]="reservationForm">
 
+    <div class="nameInput_container">
       <input type="text" class="nameInput" placeholder="Name" formControlName="name">
+      <span class="span_error" *ngIf="!reservationForm.get('name')?.valid && reservationForm.get('name')?.touched">This field is required</span>
+    </div>
 
+    <div class="emailInput_container">
       <input type="email" class="emailInput" placeholder="Email" formControlName="email">
+      <span class="span_error" *ngIf="reservationForm.get('email')?.errors?.['required'] && reservationForm.get('email')?.touched">This field is required</span>
+      <span class="span_error" *ngIf="!reservationForm.get('email')?.valid && !reservationForm.get('email')?.errors?.['required'] && reservationForm.get('email')?.touched">Email is not valid</span>
+    </div>
 
-    <div class="date_container">
-      <label for="">Pick a date</label>
+
+    <div class="date_container" formGroupName="date">
+      <div>
+        <label>Pick a date</label>
+
+        <span class="span_error" *ngIf="(reservationForm.get('date.month')?.errors?.['required'] || reservationForm.get('date.day')?.errors?.['required'] || reservationForm.get('date.year')?.errors?.['required']) && (reservationForm.get('date.month')?.touched || reservationForm.get('date.day')?.touched || reservationForm.get('date.year')?.touched )">This field is incomplete</span>
+        <!-- <span>This date is not valid</span> -->
+      </div>
+
       <div class="date_div">
-        <input type="number" class="monthInput" placeholder="MM">
-        <input type="number" class="dayInput" placeholder="DD">
-        <input type="number" class="yearInput" placeholder="YYYY" [min]="thisYear">
+        <input type="number" class="monthInput" formControlName="month" placeholder="MM">
+        <input type="number" class="dayInput" formControlName="day" placeholder="DD">
+        <input type="number" class="yearInput" formControlName="year" placeholder="YYYY" [min]="thisYear">
       </div>
     </div>
 
-    <div class="time_container">
-      <label for="">Pick a time</label>
+    <div class="time_container" formGroupName="time">
+      <div>
+        <label>Pick a time</label>
+        <span class="span_error" *ngIf="(reservationForm.get('time.hour')?.errors?.['required'] || reservationForm.get('time.minute')?.errors?.['required']) && (reservationForm.get('time.hour')?.touched || reservationForm.get('time.minuteInput')?.touched)">This field is incomplete</span>
+        <!-- <span class="span_error">This time is not valid</span> -->
+      </div>
+
       <div class="time_div">
 
-        <input type="number" class="hourInput" placeholder="09">
+        <input type="number" class="hourInput" formControlName="hour" placeholder="09">
 
-        <input type="number" class="minuteInput" placeholder="00">
+        <input type="number" class="minuteInput" formControlName="minute" placeholder="00">
 
         <div class="shifts_div" #shifts_div (click)="openShiftsDiv()">
 
           <span class="shiftPicked">
-            <input type="text" value="{{shiftPicked}}" formControlName="shift" readonly>
+            <input type="text" class="shiftInput" value="{{shiftPicked}}" formControlName="shift" readonly>
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="11"><path fill="none" stroke="#9E7F66" stroke-width="2" d="M1 1l8 8 8-8"/></svg>
           </span>
 

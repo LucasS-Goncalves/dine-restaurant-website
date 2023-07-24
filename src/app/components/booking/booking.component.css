@@ -103,14 +103,32 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 2.2rem;
+  gap: 2rem;
   padding: 2.2rem 0;
   background-color: var(--white);
   box-shadow: 0px 80px 70px -25px rgba(41, 41, 41, 0.3);
 }
 
-.form .nameInput,
-.form .emailInput{
+.form .nameInput_container .span_error,
+.form .emailInput_container .span_error,
+.form .date_container .span_error,
+.form .time_container .span_error
+{
+  display: block;
+  margin-top: .7rem;
+  margin-left: 1rem;
+  color: #B54949;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.form .date_container .span_error,
+.form .time_container .span_error{
+  margin-left: 0;
+}
+
+.form .nameInput_container .nameInput,
+.form .emailInput_container .emailInput{
   width: 263px;
   box-sizing: border-box;
   font-size: 1.25rem;
@@ -120,6 +138,27 @@
   border: none;
   border-bottom: 1px solid #8E8E8E;
   color: var(--cod-gray);
+}
+
+.form .nameInput_container .nameInput.ng-invalid.ng-touched::placeholder,
+.form .emailInput_container .emailInput.ng-invalid.ng-touched::placeholder{
+  opacity: .7;
+  color: #B54949;
+}
+
+/* .form .date_container label,
+.form .time_container label{
+  color: #B54949;
+} */
+
+.form .nameInput_container .nameInput.ng-invalid.ng-touched,
+.form .emailInput_container .emailInput.ng-invalid.ng-touched,
+.form .date_container.ng-invalid.ng-touched .date_div .monthInput,
+.form .date_container.ng-invalid.ng-touched .date_div .dayInput,
+.form .date_container.ng-invalid.ng-touched .date_div .yearInput,
+.form .time_container.ng-invalid.ng-touched .time_div .hourInput,
+.form .time_container.ng-invalid.ng-touched .time_div .minuteInput{
+  border-bottom: 1px solid #B54949;
 }
 
 .form .date_container,
@@ -146,9 +185,9 @@
 
 .form .date_container .date_div .monthInput,
 .form .date_container .date_div .dayInput,
+.form .date_container .date_div .yearInput,
 .form .time_container .time_div .hourInput,
-.form .time_container .time_div .minuteInput,
-.form .date_container .date_div .yearInput{
+.form .time_container .time_div .minuteInput{
   box-sizing: border-box;
   width: 73px;
   height: 43px;
@@ -164,8 +203,11 @@
   width: 88px;
 }
 
-.form .date_container .date_div input::placeholder,
-.form .time_container .time_div input::placeholder{
+.form .date_container .date_div .monthInput::placeholder,
+.form .date_container .date_div .dayInput::placeholder,
+.form .date_container .date_div .yearInput::placeholder,
+.form .time_container .time_div .hourInput::placeholder,
+.form .time_container .time_div .minuteInput::placeholder{
   font-size: 1.25rem;
   color: #8E8E8E;
 }
@@ -184,9 +226,17 @@
   align-items: center;
   gap: 1rem;
   position: absolute;
-  font-size: 1.25rem;
   left: .9rem;
-  top: .2rem;
+  top: .25rem;
+}
+
+.form .time_container .time_div .shifts_div .shiftPicked .shiftInput{
+  width: 34px;
+  font-size: 1.25rem;
+  border: none;
+  outline: none;
+  background: transparent;
+  cursor: pointer;
 }
 
 .form .time_container .time_div .shifts_div .shiftPicked svg{
@@ -219,7 +269,6 @@
 
 .form .time_container .time_div .shifts_div.open .shiftsOptions{
   visibility: visible;
-
 }
 
 .form .time_container .time_div .shifts_div .shiftsOptions li {
@@ -315,6 +364,27 @@
   box-shadow: 0 2px 20px 0 rgb(77, 77, 77, 0.2);
 }
 
+.form .date_container .date_div .monthInput:focus,
+.form .date_container .date_div .dayInput:focus,
+.form .date_container .date_div .yearInput:focus,
+.form .time_container .time_div .hourInput:focus,
+.form .time_container .time_div .minuteInput:focus,
+.form .time_container .time_div .shifts_div.open,
+.form .nameInput_container .nameInput:focus,
+.form .emailInput_container .emailInput:focus{
+  border-bottom: 1px solid var(--cod-gray);
+}
+
+.form .date_container .date_div .monthInput:focus::placeholder,
+.form .date_container .date_div .dayInput:focus::placeholder,
+.form .date_container .date_div .yearInput:focus::placeholder,
+.form .time_container .time_div .hourInput:focus::placeholder,
+.form .time_container .time_div .minuteInput:focus::placeholder,
+.form .nameInput_container .nameInput:focus::placeholder,
+.form .emailInput_container .emailInput:focus::placeholder{
+  color: var(--cod-gray);
+}
+
 .curve_left_form,
 .lines_form{
   display: none;
@@ -357,14 +427,13 @@
 
   .form{
     width: 540px;
-    height: 545px;
     gap: 2.5rem;
     top: -165px;
-    padding: 0;
+    padding: 2rem 0;
   }
 
-  .form .nameInput,
-  .form .emailInput,
+  .form .nameInput_container .nameInput,
+  .form .emailInput_container .emailInput,
   .form .people_div,
   .form .submitForm_button{
     width: 444px;
@@ -439,10 +508,10 @@
 
   .form{
     width: 540px;
-    height: 560px;
     gap: 2.6rem;
     top: -240px;
     right: -280px;
+    padding: 2.5rem 0;
   }
 
   .curve_left_form{
