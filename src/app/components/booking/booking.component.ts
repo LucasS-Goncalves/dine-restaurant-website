@@ -10,6 +10,14 @@ import * as customValidators from 'src/app/validator';
 })
 export class BookingComponent implements OnInit{
 
+  reservationInformation = {
+    name: '',
+    email: '',
+    date: '',
+    time: '',
+    numberOfPeople: ''
+  };
+
   reservationForm!: FormGroup;
   thisYear = new Date().getFullYear();
   formSubmitted = false;
@@ -21,6 +29,7 @@ export class BookingComponent implements OnInit{
   @ViewChild('shifts_div') shifts_div!: ElementRef<HTMLDivElement>;
   @ViewChild('shiftsOptions') shiftsOptions!: ElementRef<HTMLUListElement>;
   @ViewChild('peopleInput') peopleInput!: ElementRef<HTMLInputElement>;
+
 
   ngOnInit(): void {
 
@@ -83,7 +92,14 @@ export class BookingComponent implements OnInit{
   onSubmit(){
     this.isFormValid = false;
     this.formSubmitted = true;
-    console.log(this.reservationForm.value);
+    this.reservationInformation.name = this.reservationForm.get('name')?.value;
+    this.reservationInformation.email = this.reservationForm.get('email')?.value;
+    this.reservationInformation.date = `
+      ${this.reservationForm.get('fullDate.month')?.value}/${this.reservationForm.get('fullDate.date')?.value}/${this.reservationForm.get('fullDate.year')?.value}`;
+
+    this.reservationInformation.time = `${this.reservationForm.get('time.hour')?.value < 10 ? '0'+`${this.reservationForm.get('time.hour')?.value}` : this.reservationForm.get('time.hour')?.value}:${this.reservationForm.get('time.minute')?.value < 10 ? '0'+`${this.reservationForm.get('time.minute')?.value}` : this.reservationForm.get('time.minute')?.value} ${this.reservationForm.get('time.shift')?.value}`
+
+    this.reservationInformation.numberOfPeople = this.reservationForm.get('people')?.value;
   }
 }
 

@@ -16,14 +16,11 @@
       <p>
         We can’t wait to host you. If you have any special requirements please feel free to call on the phone number below. We’ll be happy to accommodate you.
       </p>
-      <button class="reserve_button">
-        RESERVE PLACE
-    </button>
     </div>
   </article>
 </header>
 <main class="main">
-  <form *ngIf="!formSubmitted" class="form" [ngClass]="{'emptyFilds': isFormValid ? true : false}" [formGroup]="reservationForm" >
+  <form *ngIf="!formSubmitted" id="form" class="form" (ngSubmit)="reservationForm.valid ? onSubmit() : isValid()" [ngClass]="{'emptyFilds': isFormValid ? true : false}" [formGroup]="reservationForm" >
 
     <div class="nameInput_container">
       <input type="text" class="nameInput" placeholder="Name" formControlName="name">
@@ -91,7 +88,7 @@
     </div>
 
     <div class="people_div">
-      <button type="button" (click)="decreaseNumberOfPeople()">
+      <button type="button" (click)="decreaseNumberOfPeople()" [disabled]="people <= 1">
         <svg xmlns="http://www.w3.org/2000/svg" width="7" height="3"><path fill="#9E7F66" d="M6.425 2.977V.601H.629v2.376z"/></svg>
       </button>
 
@@ -106,7 +103,7 @@
     </div>
 
     <div>
-      <button type="submit" (click)="reservationForm.valid ? onSubmit() : isValid()" class="submitForm_button">MAKE RESERVATION</button>
+      <button type="submit"  class="submitForm_button">MAKE RESERVATION</button>
 
       <span class="empty_form_message" *ngIf="isFormValid">All the fields are required</span>
     </div>
@@ -116,6 +113,9 @@
   <svg class="curve_left_form" xmlns="http://www.w3.org/2000/svg" width="993" height="320"><path fill="#5C6779" fill-rule="evenodd" d="M893 320H0V0h993v220c0 55.228-44.772 100-100 100z" opacity=".077"/></svg>
 
   <section class="thankYou" *ngIf="formSubmitted">
-    Thank you for choosing us, {{reservationForm.get('name')?.value}}! See you on {{reservationForm.get('fullDate.month')?.value}}/{{reservationForm.get('fullDate.date')?.value}}/{{reservationForm.get('fullDate.year')?.value}} at {{reservationForm.get('time.hour')?.value}}:{{reservationForm.get('time.minute')?.value}} {{reservationForm.get('time.shift')?.value}}
+    <div>
+      Thank you for choosing us, <b>{{reservationInformation.name}}</b>! Your reservation for <b>{{reservationInformation.numberOfPeople}} {{+reservationInformation.numberOfPeople > 1 ? 'people' : 'person'}}</b> on <b>{{reservationInformation.date}}</b> at <b>{{reservationInformation.time}}</b> is confirmed!
+    </div>
+    <button [routerLink]="['']">Go back to home page</button>
   </section>
 </main>

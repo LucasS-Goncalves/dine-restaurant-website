@@ -7,6 +7,7 @@ import { BookingComponent } from './components/booking/booking.component';
 const routes: Routes = [
   { path: '', component: HomepageComponent },
   { path: 'booking', component: BookingComponent },
+  { path: '**', redirectTo: '' }
 
 ];
 
