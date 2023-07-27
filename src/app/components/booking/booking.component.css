@@ -109,22 +109,18 @@
   box-shadow: 0px 80px 70px -25px rgba(41, 41, 41, 0.3);
 }
 
+.form.emptyFilds{
+  border: 1px solid #B54949;
+}
+
 .form .nameInput_container .span_error,
-.form .emailInput_container .span_error,
-.form .date_container .span_error,
-.form .time_container .span_error
-{
+.form .emailInput_container .span_error{
   display: block;
   margin-top: .7rem;
   margin-left: 1rem;
   color: #B54949;
   font-size: 0.8rem;
   font-weight: 700;
-}
-
-.form .date_container .span_error,
-.form .time_container .span_error{
-  margin-left: 0;
 }
 
 .form .nameInput_container .nameInput,
@@ -140,25 +136,20 @@
   color: var(--cod-gray);
 }
 
-.form .nameInput_container .nameInput.ng-invalid.ng-touched::placeholder,
-.form .emailInput_container .emailInput.ng-invalid.ng-touched::placeholder{
-  opacity: .7;
-  color: #B54949;
+.form .nameInput_container .nameInput.ng-invalid.ng-touched,
+.form .emailInput_container .emailInput.ng-invalid.ng-touched{
+  border-bottom: 1px solid #B54949;
 }
 
-/* .form .date_container label,
-.form .time_container label{
+.form .nameInput_container .nameInput.ng-invalid.ng-touched::placeholder,
+.form .emailInput_container .emailInput.ng-invalid.ng-touched::placeholder,
+.form .date_container.ng-invalid.ng-touched .date_div .monthInput::placeholder,
+.form .date_container.ng-invalid.ng-touched .date_div .dateInput::placeholder,
+.form .date_container.ng-invalid.ng-touched .date_div .yearInput::placeholder,
+.form .time_container.ng-invalid.ng-touched .time_div .hourInput::placeholder,
+.form .time_container.ng-invalid.ng-touched .time_div .minuteInput::placeholder{
+  opacity: .7;
   color: #B54949;
-} */
-
-.form .nameInput_container .nameInput.ng-invalid.ng-touched,
-.form .emailInput_container .emailInput.ng-invalid.ng-touched,
-.form .date_container.ng-invalid.ng-touched .date_div .monthInput,
-.form .date_container.ng-invalid.ng-touched .date_div .dayInput,
-.form .date_container.ng-invalid.ng-touched .date_div .yearInput,
-.form .time_container.ng-invalid.ng-touched .time_div .hourInput,
-.form .time_container.ng-invalid.ng-touched .time_div .minuteInput{
-  border-bottom: 1px solid #B54949;
 }
 
 .form .date_container,
@@ -174,6 +165,15 @@
   font-weight: 400;
 }
 
+.form .date_container .span_error,
+.form .time_container .span_error{
+  display: block;
+  margin-top: .7rem;
+  color: #B54949;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
 .form .date_container .date_div,
 .form .time_container .time_div{
   box-sizing: border-box;
@@ -184,7 +184,7 @@
 }
 
 .form .date_container .date_div .monthInput,
-.form .date_container .date_div .dayInput,
+.form .date_container .date_div .dateInput,
 .form .date_container .date_div .yearInput,
 .form .time_container .time_div .hourInput,
 .form .time_container .time_div .minuteInput{
@@ -204,12 +204,25 @@
 }
 
 .form .date_container .date_div .monthInput::placeholder,
-.form .date_container .date_div .dayInput::placeholder,
+.form .date_container .date_div .dateInput::placeholder,
 .form .date_container .date_div .yearInput::placeholder,
 .form .time_container .time_div .hourInput::placeholder,
 .form .time_container .time_div .minuteInput::placeholder{
   font-size: 1.25rem;
   color: #8E8E8E;
+}
+
+.form .date_container.ng-invalid.ng-touched label,
+.form .time_container.ng-invalid.ng-touched label{
+  color: #B54949;
+}
+
+.form .date_container.ng-invalid.ng-touched .date_div .monthInput,
+.form .date_container.ng-invalid.ng-touched .date_div .dateInput,
+.form .date_container.ng-invalid.ng-touched .date_div .yearInput,
+.form .time_container.ng-invalid.ng-touched .time_div .hourInput,
+.form .time_container.ng-invalid.ng-touched .time_div .minuteInput{
+  border-bottom: 1px solid #B54949;
 }
 
 .form .time_container .time_div .shifts_div{
@@ -303,11 +316,27 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: .3rem;
+  gap: .1rem;
   margin: 0 4.5rem;
   font-weight: 700;
   line-height: 24px;
   letter-spacing: -.25px;
+}
+
+.form .people_div .peopleInfo .numberOfPeople{
+  text-align: center;
+  width: 30px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -.25px;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+.form .people_div .peopleInfo .numberOfPeople::-webkit-inner-spin-button{
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .form .people_div .peopleInfo span{
@@ -351,7 +380,7 @@
   left: 0;
   transform:scaleX(0);
   background-color: var(--white);
-  transition: .4s;
+  transition: .2s;
   z-index: -1;
 }
 
@@ -365,7 +394,7 @@
 }
 
 .form .date_container .date_div .monthInput:focus,
-.form .date_container .date_div .dayInput:focus,
+.form .date_container .date_div .dateInput:focus,
 .form .date_container .date_div .yearInput:focus,
 .form .time_container .time_div .hourInput:focus,
 .form .time_container .time_div .minuteInput:focus,
@@ -375,19 +404,23 @@
   border-bottom: 1px solid var(--cod-gray);
 }
 
-.form .date_container .date_div .monthInput:focus::placeholder,
-.form .date_container .date_div .dayInput:focus::placeholder,
-.form .date_container .date_div .yearInput:focus::placeholder,
-.form .time_container .time_div .hourInput:focus::placeholder,
-.form .time_container .time_div .minuteInput:focus::placeholder,
-.form .nameInput_container .nameInput:focus::placeholder,
-.form .emailInput_container .emailInput:focus::placeholder{
-  color: var(--cod-gray);
-}
-
 .curve_left_form,
 .lines_form{
   display: none;
+}
+
+.empty_form_message{
+  display: block;
+  color: #B54949;
+  text-align: center;
+  font-size: 1rem;
+  margin-top: 1.5rem;
+}
+
+.thankYou{
+  border: 1px solid black;
+  padding: 2rem;
+  box-shadow: 0px 0px 40px -20px rgba(41, 41, 41, 0.9);
 }
 
 @media(min-width: 768px){
@@ -454,7 +487,7 @@
   }
 
   .form .date_container .date_div .monthInput,
-  .form .date_container .date_div .dayInput,
+  .form .date_container .date_div .dateInput,
   .form .date_container .date_div .yearInput,
   .form .time_container .time_div .hourInput,
   .form .time_container .time_div .minuteInput{

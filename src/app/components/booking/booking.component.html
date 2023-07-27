@@ -1,5 +1,5 @@
 <header class="header">
-  <div class="headerPicture_container">
+  <div class="headerPicture_container" >
     <picture>
       <source media="(max-width: 767px)" srcset="../../../assets/images/booking/hero-bg-mobile@2x.jpg">
       <source media="(max-width: 1199px)" srcset="../../../assets/images/booking/hero-bg-tablet@2x.jpg">
@@ -23,7 +23,7 @@
   </article>
 </header>
 <main class="main">
-  <form class="form" [formGroup]="reservationForm">
+  <form *ngIf="!formSubmitted" class="form" [ngClass]="{'emptyFilds': isFormValid ? true : false}" [formGroup]="reservationForm" >
 
     <div class="nameInput_container">
       <input type="text" class="nameInput" placeholder="Name" formControlName="name">
@@ -37,18 +37,18 @@
     </div>
 
 
-    <div class="date_container" formGroupName="date">
+    <div class="date_container" formGroupName="fullDate">
       <div>
         <label>Pick a date</label>
 
-        <span class="span_error" *ngIf="(reservationForm.get('date.month')?.errors?.['required'] || reservationForm.get('date.day')?.errors?.['required'] || reservationForm.get('date.year')?.errors?.['required']) && (reservationForm.get('date.month')?.touched || reservationForm.get('date.day')?.touched || reservationForm.get('date.year')?.touched )">This field is incomplete</span>
-        <!-- <span>This date is not valid</span> -->
+        <span class="span_error" *ngIf="(reservationForm.get('fullDate.month')?.errors?.['required'] || reservationForm.get('fullDate.date')?.errors?.['required'] || reservationForm.get('fullDate.year')?.errors?.['required']) && (reservationForm.get('fullDate.month')?.touched || reservationForm.get('fullDate.date')?.touched || reservationForm.get('fullDate.year')?.touched )">This field is incomplete</span>
+        <span class="span_error" *ngIf="reservationForm.get('fullDate')?.errors?.['validDate'] && !reservationForm.get('fullDate.month')?.errors?.['required'] && !reservationForm.get('fullDate.date')?.errors?.['required'] && !reservationForm.get('fullDate.year')?.errors?.['required']">This date is not valid</span>
       </div>
 
       <div class="date_div">
-        <input type="number" class="monthInput" formControlName="month" placeholder="MM">
-        <input type="number" class="dayInput" formControlName="day" placeholder="DD">
-        <input type="number" class="yearInput" formControlName="year" placeholder="YYYY" [min]="thisYear">
+        <input type="number" class="monthInput" formControlName="month" placeholder="MM" min="1" max="12">
+        <input type="number" class="dateInput" formControlName="date" placeholder="DD" min="1" max="31">
+        <input type="number" class="yearInput" formControlName="year" placeholder="YYYY" [min]="thisYear" [max]="thisYear+2">
       </div>
     </div>
 
@@ -56,7 +56,7 @@
       <div>
         <label>Pick a time</label>
         <span class="span_error" *ngIf="(reservationForm.get('time.hour')?.errors?.['required'] || reservationForm.get('time.minute')?.errors?.['required']) && (reservationForm.get('time.hour')?.touched || reservationForm.get('time.minuteInput')?.touched)">This field is incomplete</span>
-        <!-- <span class="span_error">This time is not valid</span> -->
+        <span class="span_error" *ngIf="(!reservationForm.get('time.hour')?.errors?.['required'] && !reservationForm.get('time.minute')?.errors?.['required']) && reservationForm.get('time')?.errors?.['validTime']">This time is not valid</span>
       </div>
 
       <div class="time_div">
@@ -91,23 +91,31 @@
     </div>
 
     <div class="people_div">
-      <button type="button" (click)="people = people - 1" [disabled]="people <= 1">
+      <button type="button" (click)="decreaseNumberOfPeople()">
         <svg xmlns="http://www.w3.org/2000/svg" width="7" height="3"><path fill="#9E7F66" d="M6.425 2.977V.601H.629v2.376z"/></svg>
       </button>
 
       <div class="peopleInfo">
-        <span class="numberOfPeople">{{people}}</span>
+        <input type="number" class="numberOfPeople" formControlName="people" [value]="people" readonly>
         <span class="peopleText" [textContent]="people === 1 ? 'person' : 'people'"></span>
       </div>
 
-      <button type="button" (click)="people = people + 1">
+      <button type="button" (click)="increaseNumberOfPeople()">
         <svg xmlns="http://www.w3.org/2000/svg" width="10" height="11"><path fill="#9E7F66" d="M6.227 10.156V6.727h3.429V4.342H6.227V.913H3.842v3.429H.413v2.385h3.429v3.429z"/></svg>
       </button>
     </div>
 
-    <button type="button" class="submitForm_button">MAKE RESERVATION</button>
+    <div>
+      <button type="submit" (click)="reservationForm.valid ? onSubmit() : isValid()" class="submitForm_button">MAKE RESERVATION</button>
+
+      <span class="empty_form_message" *ngIf="isFormValid">All the fields are required</span>
+    </div>
 
     <svg class="lines_form" xmlns="http://www.w3.org/2000/svg" width="160" height="76"><g fill="#9E7F66" fill-rule="evenodd"><path d="M0 70h160v6H0zM0 56h160v6H0zM0 42h160v6H0zM0 28h160v6H0zM0 14h160v6H0zM0 0h160v6H0z"/></g></svg>
   </form>
   <svg class="curve_left_form" xmlns="http://www.w3.org/2000/svg" width="993" height="320"><path fill="#5C6779" fill-rule="evenodd" d="M893 320H0V0h993v220c0 55.228-44.772 100-100 100z" opacity=".077"/></svg>
+
+  <section class="thankYou" *ngIf="formSubmitted">
+    Thank you for choosing us, {{reservationForm.get('name')?.value}}! See you on {{reservationForm.get('fullDate.month')?.value}}/{{reservationForm.get('fullDate.date')?.value}}/{{reservationForm.get('fullDate.year')?.value}} at {{reservationForm.get('time.hour')?.value}}:{{reservationForm.get('time.minute')?.value}} {{reservationForm.get('time.shift')?.value}}
+  </section>
 </main>
