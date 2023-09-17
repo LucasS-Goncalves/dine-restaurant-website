@@ -114,7 +114,7 @@
 
   <section class="thankYou" *ngIf="formSubmitted">
     <div>
-      Thank you for choosing us, <b>{{reservationInformation.name}}</b>! Your reservation for <b>{{reservationInformation.numberOfPeople}} {{+reservationInformation.numberOfPeople > 1 ? 'people' : 'person'}}</b> on <b>{{reservationInformation.date}}</b> at <b>{{reservationInformation.time}}</b> is confirmed!
+      Thank you for choosing us, <b>{{reservationInformation.name}}</b>! <br> Your reservation for <b>{{reservationInformation.numberOfPeople}} {{+reservationInformation.numberOfPeople > 1 ? 'people' : 'person'}}</b> on <b>{{reservationInformation.date}}</b> at <b>{{reservationInformation.time}}</b> is confirmed!
     </div>
     <button [routerLink]="['']">Go back to home page</button>
   </section>
